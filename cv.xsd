@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs='http://www.w3.org/2001/XMLSchema'
+  targetNamespace='http://apps.braux.net/cv'
+  xmlns:cv='http://apps.braux.net/cv'>
+
+ <xs:element name='CV'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:TITLE'/>
+    <xs:element ref='cv:SUBTITLE' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:PERSON'/>
+    <xs:element ref='cv:TRAINING' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='cv:EXPERIENCE' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='PERSON'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:IDENTITY'/>
+    <xs:element ref='cv:EMAIL' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:PHONE' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:MOBILE' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:ADDRESS' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:WEB' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='cv:SOCIAL' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ 
+ <xs:element name='IDENTITY'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:NICKNAME' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:NAME'/>
+    <xs:element ref='cv:FORNAME'/>
+    <xs:element ref='cv:IMAGE' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:BIRTHDATE' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='TITLE' type="xs:string" />
+
+ <xs:element name='SUBTITLE' type="xs:string" />
+
+ <xs:element name='SKILL'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:TYPE'/>
+    <xs:element ref='cv:ITEMNAME'/>
+    <xs:element ref='cv:DESCRIPTION'/>
+   </xs:sequence>
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='TRAINING'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:TYPE'/>
+    <xs:element ref='cv:DATE'/>
+    <xs:element ref='cv:ITEMNAME'/>
+    <xs:element ref='cv:DESCRIPTION'/>
+    <xs:element ref='cv:COMMENT' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:SKILL' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='EXPERIENCE'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:TYPE'/>
+    <xs:element ref='cv:DATE'/>
+    <xs:element ref='cv:ITEMNAME'/>
+    <xs:element ref='cv:DESCRIPTION'/>
+    <xs:element ref='cv:COMMENT' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='cv:SKILL' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='ADDRESS'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='cv:STREET'/>
+    <xs:element ref='cv:COMPLEMENT1'/>
+    <xs:element ref='cv:COMPLEMENT2'/>
+    <xs:element ref='cv:COMPLEMENT3'/>
+    <xs:element ref='cv:POSTALCODE'/>
+    <xs:element ref='cv:CITY'/>
+    <xs:element ref='cv:COUNTRY'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ 
+ <xs:element name='TYPE' type="xs:string" />
+
+ <xs:element name='ITEMNAME' type="xs:string" />
+
+ <xs:element name='DESCRIPTION' type="xs:string" />
+
+ <xs:element name='DATE' type="xs:date" />
+ 
+ <xs:element name='BIRTHDATE' type="xs:date" />
+ 
+ <xs:element name='NAME' type="xs:string" />
+ 
+ <xs:element name='FORNAME' type="xs:string" />
+ 
+ <xs:element name='IMAGE' type="xs:string" />
+ 
+ <xs:element name='EMAIL' type="xs:string" />
+ 
+ <xs:element name='PHONE' type="xs:string" />
+ 
+ <xs:element name='MOBILE' type="xs:string" />
+ 
+ <xs:element name='STREET' type="xs:string" />
+
+ <xs:element name='COMPLEMENT1' type="xs:string" />
+
+ <xs:element name='COMPLEMENT2' type="xs:string" />
+
+ <xs:element name='POSTALCODE' type="xs:string" />
+
+ <xs:element name='COMPLEMENT3' type="xs:string" />
+
+ <xs:element name='CITY' type="xs:string" />
+
+ <xs:element name='COUNTRY' type="xs:string" />
+ 
+ <xs:element name='SOCIAL' type="xs:string" />
+ 
+ <xs:element name='WEB' type="xs:string" />
+ 
+ <xs:element name='NICKNAME' type="xs:string" />
+ 
+ <xs:element name='COMMENT' type="xs:string" />
+ 
+</xs:schema>
